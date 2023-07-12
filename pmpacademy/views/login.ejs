@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;900&display=swap" rel="stylesheet"> 
+    <!-- end fonts -->
+    <script src="https://kit.fontawesome.com/9ab56b06a3.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>login-form</title>
+    
+  </head>
+  <body>
+    <%- include('blocks/menu.ejs') %>
+
+    <section>
+    <div class="login-form">
+      <% if(err) { %>
+      <p style="color: red;"><%= err %></p>
+      <% } %>
+      
+      <form class="input-group" action="/login" method="POST">
+        <div class="input-group">
+          <h3>Login Page</h3>
+          <input type="email" name="email" placeholder="Enter Email" />
+        </div>
+        <div class="input-group">
+          <input type="password" name="password" placeholder="Password"/>
+        </div>
+        <button>Login</button>
+      </form> 
+      <a href="/register">Register</a>
+    </div>
+  </section>
+  
+  </body>
+<!-- <%- include('blocks/footer.ejs') %> -->
+
+</html>
+
+<style>
+  body {
+    /* background: url(/public/images/background4.png); */
+    background: rgb(27, 24, 29);
+
+        font-family: 'Poppins', sans-serif;
+        height: auto;
+        padding-bottom: 50%;
+     }
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+</style>

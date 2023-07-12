@@ -1,0 +1,32 @@
+{
+  "name": "qwerty123",
+  "version": "1.0.0",
+  "description": "This is the refactored and cleaned code from the Understanding Auth in Node using Sessions and Cookies",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "ais",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "config": "^3.3.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.4.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "mongodb": "^4.16.0",
+    "mongoose": "^5.13.14",
+    "nodemailer": "^6.7.5",
+    "npm": "^8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

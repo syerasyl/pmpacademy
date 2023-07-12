@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <!-- google fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;900&display=swap" rel="stylesheet"> 
+    <!-- end fonts -->
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/9ab56b06a3.js" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">  -->
+   
+    <!-- <script src="https://kit.fontawesome.com/9ab56b06a3.js" crossorigin="anonymous"></script> -->
+  <head>
+    <title>Contact</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- <script type="module" src="/index.js"></script> -->
+  </head>
+
+<body>
+  
+  <section class="back-cont">
+    <%- include('blocks/menu.ejs') %>
+
+  <div class="contact">
+  <div class="content">
+    <h3 class="contact-us">CONTACT US</h3>
+    <p>Please contact us, if you have any quesiton!</p>
+  </div>
+  <div class="container">
+    <div class="contactInfo">
+      <div class="box">
+        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="text">
+          <h3>Address</h3>
+          <p>Mangilik-El Avenue, C1</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="icon"></div>
+        <div class="text">
+          <h3>Phone</h3>
+          <p>8-747-748-48-46</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="icon"></div>
+        <div class="text">
+          <h3>Email Address</h3>
+          <p>zhaksytayevv@mail.ru</p>
+        </div>
+      </div>
+    </div>
+
+      <form class="contact-form">
+        <h2>Send Message</h2>
+        <div class="inputBox">
+          <input type="text" id="name" required="required">
+          <span>Full Name</span>
+        </div>
+        <div class="inputBox">
+          <input type="text" id="email" required="required">
+          <span>Email</span>
+        </div>
+        <div class="inputBox">
+          <input type="test" id="subject" required="required">
+          <span>Subject</span>
+        </div>
+        <div class="inputBox">
+          <input type="text" id="phone" required="required">
+          <span>Phone</span>
+        </div>
+        <div class="inputBox">
+          <textarea required="required" id="message"></textarea>
+          <span>Type your Message...</span>
+        </div>
+        <div class="inputBox">
+          <input class="submit-button-contact" type="submit" value="Send Message"">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="map-block">
+      
+
+  <h3 class="h3-contact" >We are located</h3>
+  
+  <div class="map-class" id="map"></div>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNH8ocJ8VTE4YjS7Aoa2udysi65dmZT2Q&callback=initMap&v=weekly"defer></script>
+  <script>
+    
+  function initMap() {
+    
+  const astanaExpo = { lat: 51.091141, lng: 71.417444 };
+  
+  const map = new google.maps.Map(document.getElementById("map"), {
+  zoom: 15,
+  center: astanaExpo,
+  });
+
+  const marker = new google.maps.Marker({
+  position: astanaExpo,
+  map: map,
+  });
+  }
+
+  window.initMap = initMap;
+  </script>
+  
+</section>   -->
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  const contactForm = document.querySelector('.contact-form');
+  let name = document.getElementById('name');
+  let email = document.getElementById('email');
+  let subject = document.getElementById('subject');
+  let phone = document.getElementById('phone');
+  let message = document.getElementById('message');
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let formData = {
+      name: name.value,
+      email: email.value,
+      subject: email.value,
+      phone: phone.value,
+      message: message.value
+    }
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/suc');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function() {
+      console.log(xhr.responseText);
+      if (xhr.responseText == "success") {
+        alert('Email sent');
+        name.value = '';
+        email.value = '';
+        subject.value = '';
+        phone.value = '';
+        message.value = '';
+      } else {
+        alert("Something went wrong!");
+      }
+    }
+    xhr.send(JSON.stringify(formData));
+
+  })
+</script>
+<!-- end section form -->
+
+<!-- footer start -->
+<%- include('blocks/footer.ejs') %>
+
+
+<!-- footer end -->
+  </body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--========== CSS ==========-->
+
+    <!-- ============FONT AWESOME=========== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--    <link rel="stylesheet" href="/public/css/admin-page-style.css">-->
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+
+
+
+    <title>ADMIN PANEL</title>
+</head>
+<body>
+<%- include('blocks/admin-header') %>
+
+<!--========== CONTENTS ==========-->
+<main>
+    <h2 class="main-heading">ASDASD</h2>
+    <section>
+        <section class="main-container-right">
+            <h1 class="dispaly-5">All Users:</h1>
+            <hr>
+            <% users.forEach(function(user) { %>
+                <a href="/user-edit/<%= user._id %>"><%= user.email %></a>
+            <br>
+            <% }); %>
+        </section>
+    </section>
+</main>
+
+<!--========== MAIN JS ==========-->
+<script src="assets/edu.js"></script>
+</body>
+</html>
+
+<style>
+
+</style>

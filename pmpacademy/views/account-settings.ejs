@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>Profile</title>
+
+</head>
+<body>
+<%- include('blocks/header-main') %>
+<!--========== CONTENTS ==========-->
+<main>
+    <section>
+        <h1 class="display-5">Account Settings</h1>
+        <hr>
+        <p class="lead">Email: <%= user.email %> | Username: <%= user.username %></p>
+        <hr>
+        <form action="/account-settings" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="title" class="text-white">Username: </label>
+            <input type="text" class="form-control" placeholder="Nickname" name="nickname"
+                   value="<%= user.username %>" required>
+            <br><br>
+            <label for="type" class="text-white">Email: </label>
+            <input type="text" class="form-control" placeholder="Email" name="email" value="<%= user.email %>"
+                   required>
+            <br><br>
+            <button type="submit" class="btn btn-primary"> Update</button>
+        </form>
+        <br>
+        <h3>Change Password</h3>
+        <form action="/change-password" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="" class="text-white">Current Password: </label>
+            <input type="password" class="form-control" name="current" required>
+            <br><br>
+            <label for="" class="text-white">New Password: </label>
+            <input type="password" class="form-control" name="new" required>
+            <br><br>
+            <button type="submit" class="btn btn-primary"> Update</button>
+        </form>
+    </section>
+</main>
+<script src="/assets/edu-scripts/edu.js"></script>
+</body>
+</html>
+
+<style>
+</style>

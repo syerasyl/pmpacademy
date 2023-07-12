@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+
+</head>
+<body>
+<header>
+  <H1>Quiz</H1>
+</header>
+
+<div class="container">
+  <section id="p0">
+    <h3>KZ Astanasy</h3>
+
+    <label>
+      <input type="radio" value="1" name="p0" onclick="requesta(0, this)">Almaty
+    </label>
+
+      <label>
+      <input type="radio" value="2" name="p0" onclick="requesta(0, this)">Nursultan
+    </label>
+
+      <label>
+      <input type="radio" value="3" name="p0" onclick="requesta(0, this)">Karagandy
+    </label>
+
+      <label>
+      <input type="radio" value="4" name="p0" onclick="requesta(0, this)">Taraz
+      </label>
+
+      <label>
+      <input type="radio" value="5" name="p0" onclick="requesta(0, this)">Semei
+    </label>
+    
+  </section>
+
+  <section id="p1">
+    <h3>1662 ж. ағылшын Ғылымдар академиясының рөлін атқарған Корольдық қоғам құрылған қала:</h3>
+
+    <label>
+      <input type="radio" value="1" name="p1" onclick="requesta(1, this)">Оксфорд
+    </label>
+
+      <label>
+      <input type="radio" value="2" name="p1" onclick="requesta(1, this)">Кембридж  
+    </label>
+
+      <label>
+      <input type="radio" value="3" name="p1" onclick="requesta(1, this)">Честер
+    </label>
+
+      <label>
+      <input type="radio" value="4" name="p1" onclick="requesta(1, this)">Лондон
+      </label>
+
+      <label>
+      <input type="radio" value="5" name="p1" onclick="requesta(1, this)">Кентербери
+    </label>
+
+  </section>
+
+  <section id="p2">
+    <h3>Түрік қағандығы дәуіріндегі (VІ–VІІІғғ. ) құм мен сазбалшықты араластыра отырып жасалған көне саз аспабы:</h3>
+
+    <label>
+      <input type="radio" value="1" name="p2" onclick="requesta(2, this)">дудыға
+    </label>
+
+      <label>
+       <input type="radio" value="2" name="p2" onclick="requesta(2,this)">асатаяқ
+      </label>
+
+      <label>
+      <input type="radio" value="3" name="p2" onclick="requesta(2, this)">дауылпаз
+    </label>
+
+      <label>
+      <input type="radio" value="4" name="p2" onclick="requesta(2, this)">жетіген
+      </label>
+
+      <label>
+      <input type="radio" value="5" name="p2" onclick="requesta(2, this)">дүңгіршек
+    </label>
+    
+  </section>
+
+  <section id="p3">
+    <h3>Төртінші крест жорығында Византияның жерінде кресшілер құрған мемлекет:</h3>
+
+    <label>
+      <input type="radio" value="1" name="p3" onclick="requesta(3, this)">Иерусалим корольдігі
+    </label>
+
+      <label>
+      <input type="radio" value="2" name="p3" onclick="requesta(3, this)">Эдесса графтігі
+    </label>
+
+      <label>
+      <input type="radio" value="3" name="p3" onclick="requesta(3, this)">Триполи корольдігі
+    </label>
+
+      <label>
+      <input type="radio" value="4" name="p3" onclick="requesta(3, this)">Сербия корольдігі
+      </label>
+
+      <label>
+      <input type="radio" value="5" name="p3" onclick="requesta(3, this)">Латын империясы
+    </label>
+    
+  </section>
+
+  <section id="p4">
+    <h3>1269 жылғы Талас жағасындағы құрылтайда қабылданған шешім:</h3>
+
+    <label>
+      <input type="radio" value="1" name="p4" onclick="requesta(4, this)">Ұлы Жібек бойындағы қалаларға ерекше өзіндік баж салығын орнатy
+    </label>
+
+      <label>
+      <input type="radio" value="2" name="p4" onclick="requesta(4, this)">Батысқа екінші рет жорық жасау
+    </label>
+
+      <label>
+      <input type="radio" value="3" name="p4" onclick="requesta(4, this)">Отырықшы халықтан белгіленген салық мөлшерінен артық алуға тыйым
+    </label>
+
+      <label>
+      <input type="radio" value="4" name="p4" onclick="requesta(4, this)">Мөңке өлімінен кейін ұлы ханды сайлау
+      </label>
+
+      <label>
+      <input type="radio" value="5" name="p4" onclick="requesta(4, this)">Алтын Орда хандарының Египет сұлтандарымен байланысын реттеу
+    </label>
+    
+  </section>
+<button onclick="corregjir()"><h3>FINISH</h3></button>
+<h2>Scores: <span id="resulta"></span> </h2>
+  <!-- <section id="p0">
+    <h3></h3>
+
+    <label>
+      <input type="radio" value="1" name="">
+    </label>
+
+      <label>
+      <input type="radio" value="2" name="">
+    </label>
+
+      <label>
+      <input type="radio" value="3" name="">
+    </label>
+
+      <label>
+      <input type="radio" value="4" name="">
+      </label>
+
+      <label>
+      <input type="radio" value="5" name="">
+    </label>
+    
+  </section> -->
+</div>
+
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script> -->
+<script>
+let correctAns = [2,4,5,5,3];
+
+let opcion_elegida = [];
+
+let cantidad_correctas = 0;
+
+function requesta(num_pregunda, seleccionada) {
+  opcion_elegida[num_pregunda] = seleccionada.value;
+
+  id = "p" + num_pregunda;
+
+  labels = document.getElementById(id).childNodes;
+  labels[1].style.backgroundColor = "white";
+  labels[3].style.backgroundColor = "white";
+  labels[5].style.backgroundColor = "white";
+  labels[7].style.backgroundColor = "white";
+  labels[9].style.backgroundColor = "white";
+
+
+  seleccionada.parentNode.style.backgroundColor = "rgb(0, 196, 0)";
+}
+
+function corregjir() {
+  cantidad_correctas = 0;
+  for(i=0; i<correctAns.length; i++) {
+    if (correctAns[i] == opcion_elegida[i]) {
+      cantidad_correctas++;
+    }
+  }
+
+  document.getElementById("resulta").innerHTML = cantidad_correctas;
+}
+
+
+</script>
+</body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+  }
+  body {
+    background: rgba(230, 229, 229, 0.525);
+
+  }
+  header {
+    background: black;
+    height: 100px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  h1 {
+    color: white;
+  }
+  .container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+  }
+  .container section {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    background: white;
+  }
+  /* section {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+  } */
+  label {
+    display: block;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px dashed blue;
+    margin-bottom: 3px;
+  }
+  label:hover {
+    background:rgba(118, 208, 54, 0.532);
+  }
+  button {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    background-color: wheat;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+  }
+  button:hover {
+    background: black;
+    color: white;
+  }
+  h2 {
+    text-align: center;
+  }
+  #result {
+    font-size: 30px;
+    color: darkred;
+  }
+
+</style>

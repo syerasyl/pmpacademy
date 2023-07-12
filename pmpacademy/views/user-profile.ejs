@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+    
+     <!--========== BOX ICONS ==========-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>Profile</title>
+    
+  </head>
+  <body>
+    <%- include('blocks/header-main') %>
+     <!--========== CONTENTS ==========-->
+     <main>
+        <section>
+            <div class="container">
+                <div class="cover-photo">
+                  <img src="/public/images/download.png" class="profile">
+                </div>
+                <div class="profile-name">
+                    <h4> Username: %= data.email %></h4>
+                </div>
+                <p class="about">Username: %=data.email%> </p>
+                <p class="about">Email:  %=data.email%> </p>
+                <!-- <button class="msg-btn">Message</button> -->
+                <!-- <button class="follow-btn">Following</button> -->
+                <div>
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-youtube"></i>
+                  <i class="fab fa-twitter"></i>
+                </div>
+              </div>
+        </section>
+    </main>
+    <script src="/assets/edu-scripts/edu.js"></script>
+  </body>
+</html>
+
+<style>
+</style>

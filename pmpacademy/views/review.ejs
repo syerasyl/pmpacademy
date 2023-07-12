@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>PMP Academy</title>
+
+</head>
+<body>
+<%- include('blocks/header-main-ielts') %>
+<!--========== CONTENTS ==========-->
+<main>
+    <section>
+        <div class="no-container">
+            <section id="p0">
+                <form method="post" , action="/check-answers">
+                    <% let count = -1
+                    let scores = 0;
+                    for (let elem of correct) {
+                        if (elem === 1) {
+                            scores++;
+                        }
+                    }
+                    variant.forEach(function(v) {
+                        count++
+                    %>
+                    <h3><%= v.question %></h3>
+                    <% v.options.forEach(function(op) { %>
+                        <label>
+                            <% if (correct[count] === 1) { %>
+                                <% if (op === ans[count]){ %>
+                                    <input style="accent-color: green" type="radio" value="<%= op %>"
+                                           name="<%= v.question %>" checked><%= op %> ✓
+                                <% } else { %>
+                                    <input style="accent-color: red" type="radio" value="<%= op %>"
+                                           name="<%= v.question %>" disabled><%= op %>
+                                <% } %>
+                            <% } else { %>
+                                <% if (op === ans[count]){ %>
+                                    <input style="accent-color: green" type="radio" value="<%= op %>"
+                                           name="<%= v.question %>" checked><%= op %> ✘
+                                <% } else if (op === v.answer){ %>
+                                    <input style="accent-color: red" type="radio" value="<%= op %>"
+                                           name="<%= v.question %>" disabled><%= op %> ✓
+                                <% } else { %>
+                                    <input style="accent-color: red" type="radio" value="<%= op %>"
+                                           name="<%= v.question %>" disabled><%= op %>
+                                <% } %>
+                            <% } %>
+
+                        </label>
+                    <% }); %>
+                    <% }); %>
+                </form>
+
+            </section>
+
+
+            <h2>Scores: <span id="resulta"><%= scores %> / <%= ans.length %></span></h2>
+        </div>
+
+    </section>
+    <script src="/public/just.js">
+
+    </script>
+</main>
+</body>
+</html>
+
+<style>
+    .no-container {
+        max-width: 700px;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding: 20px;
+        box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .75);
+        user-select: none;
+        margin: 50px auto;
+        background: #f0f0fd;
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+    }
+
+    .no-container section {
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px 0;
+        background: white;
+    }
+
+    .no-container label {
+        display: block;
+        padding: 7px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 1px dashed blue;
+        margin-bottom: 3px;
+    }
+
+    .no-container label:hover {
+        background: rgba(118, 208, 54, 0.532);
+    }
+
+    .no-container button {
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding: 10px;
+        background-color: wheat;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .no-container button:hover {
+        background: black;
+        color: white;
+    }
+
+    .no-container h2 {
+        text-align: center;
+    }
+
+    #result {
+        font-size: 30px;
+        color: darkred;
+    }
+
+</style>

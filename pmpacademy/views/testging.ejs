@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+    
+     <!--========== BOX ICONS ==========-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>PMP Academy</title>
+    
+  </head>
+  <body>
+    <%- include('blocks/header-main-ielts') %>
+     <!--========== CONTENTS ==========-->
+     <main>
+        <section>
+            <div class="no-container">
+                <section id="p0">
+                  <h3>KZ Astanasy</h3>
+              
+                  <label>
+                    <input type="radio" value="1" name="p0" onclick="requesta(0, this)">Almaty
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="2" name="p0" onclick="requesta(0, this)">Nursultan
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="3" name="p0" onclick="requesta(0, this)">Karagandy
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="4" name="p0" onclick="requesta(0, this)">Taraz
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="5" name="p0" onclick="requesta(0, this)">Semei
+                  </label>
+                  
+                </section>
+              
+                <section id="p1">
+                  <h3>1662 ж. ағылшын Ғылымдар академиясының рөлін атқарған Корольдық қоғам құрылған қала:</h3>
+              
+                  <label>
+                    <input type="radio" value="1" name="p1" onclick="requesta(1, this)">Оксфорд
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="2" name="p1" onclick="requesta(1, this)">Кембридж  
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="3" name="p1" onclick="requesta(1, this)">Честер
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="4" name="p1" onclick="requesta(1, this)">Лондон
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="5" name="p1" onclick="requesta(1, this)">Кентербери
+                  </label>
+              
+                </section>
+              
+                <section id="p2">
+                  <h3>Түрік қағандығы дәуіріндегі (VІ–VІІІғғ. ) құм мен сазбалшықты араластыра отырып жасалған көне саз аспабы:</h3>
+              
+                  <label>
+                    <input type="radio" value="1" name="p2" onclick="requesta(2, this)">дудыға
+                  </label>
+              
+                    <label>
+                     <input type="radio" value="2" name="p2" onclick="requesta(2,this)">асатаяқ
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="3" name="p2" onclick="requesta(2, this)">дауылпаз
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="4" name="p2" onclick="requesta(2, this)">жетіген
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="5" name="p2" onclick="requesta(2, this)">дүңгіршек
+                  </label>
+                  
+                </section>
+              
+                <section id="p3">
+                  <h3>Төртінші крест жорығында Византияның жерінде кресшілер құрған мемлекет:</h3>
+              
+                  <label>
+                    <input type="radio" value="1" name="p3" onclick="requesta(3, this)">Иерусалим корольдігі
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="2" name="p3" onclick="requesta(3, this)">Эдесса графтігі
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="3" name="p3" onclick="requesta(3, this)">Триполи корольдігі
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="4" name="p3" onclick="requesta(3, this)">Сербия корольдігі
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="5" name="p3" onclick="requesta(3, this)">Латын империясы
+                  </label>
+                  
+                </section>
+              
+                <section id="p4">
+                  <h3>1269 жылғы Талас жағасындағы құрылтайда қабылданған шешім:</h3>
+              
+                  <label>
+                    <input type="radio" value="1" name="p4" onclick="requesta(4, this)">Ұлы Жібек бойындағы қалаларға ерекше өзіндік баж салығын орнатy
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="2" name="p4" onclick="requesta(4, this)">Батысқа екінші рет жорық жасау
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="3" name="p4" onclick="requesta(4, this)">Отырықшы халықтан белгіленген салық мөлшерінен артық алуға тыйым
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="4" name="p4" onclick="requesta(4, this)">Мөңке өлімінен кейін ұлы ханды сайлау
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="5" name="p4" onclick="requesta(4, this)">Алтын Орда хандарының Египет сұлтандарымен байланысын реттеу
+                  </label>
+                  
+                </section>
+                <a href="#"><button onclick="corregjir()"><h3>FINISH</h3></button></a>
+              <h2>Scores: <span id="resulta"></span> </h2>
+
+                <!-- <section id="p0">
+                  <h3></h3>
+              
+                  <label>
+                    <input type="radio" value="1" name="">
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="2" name="">
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="3" name="">
+                  </label>
+              
+                    <label>
+                    <input type="radio" value="4" name="">
+                    </label>
+              
+                    <label>
+                    <input type="radio" value="5" name="">
+                  </label>
+                  
+                </section> -->
+              </div>
+
+        </section>
+<script src="/public/just.js">
+    
+</script>
+    </main>
+  </body>
+</html>
+
+<style>
+  .no-container {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+    user-select: none;
+      margin: 50px auto;
+      background: #f0f0fd;
+      border-radius: 5px;
+      height: auto;
+      width: auto;
+  }
+  .no-container section {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    background: white;
+  }
+  .no-container label {
+    display: block;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px dashed blue;
+    margin-bottom: 3px;
+  }
+  .no-container label:hover {
+    background:rgba(118, 208, 54, 0.532);
+  }
+  .no-container button {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    background-color: wheat;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+  }
+  .no-container button:hover {
+    background: black;
+    color: white;
+  }
+   .no-container h2 {
+    text-align: center;
+  }
+  #result {
+    font-size: 30px;
+    color: darkred;
+  }
+
+</style>

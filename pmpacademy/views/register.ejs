@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;900&display=swap" rel="stylesheet"> 
+    <!-- end fonts -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Register | Node Auth</title>
+
+    <script src="https://kit.fontawesome.com/9ab56b06a3.js" crossorigin="anonymous"></script>
+
+    
+    </style>
+  </head>
+  <body>
+    <%- include('blocks/menu.ejs') %>
+    <section>
+    <div class="login-form">
+      <% if(err) { %>
+      <p style="color: rgb(255, 255, 255); background: red;"><%= err %></p>
+      <% } %>
+        
+      
+      <form class="input-group" action="/register" method="POST">
+        <div class="input-group">
+          <h3>Register Page</h3>
+          <input type="text" name="username"placeholder="Username" />
+        </div>
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Enter Email" />
+        </div>
+        <div class="input-group">
+          <input type="password" name="password" placeholder="Password" />
+        </div>
+        <button>Register</button>
+      </form>
+      <a href="/login">Login</a>
+    </div>
+  </section>
+<!-- <%- include('blocks/footer.ejs') %> -->
+
+  </body>
+  
+</html>
+
+<style>
+  body {
+    /* background: url(/public/images/background4.png); */
+    background: rgb(27, 24, 29);
+        font-family: 'Poppins', sans-serif;
+        height: 800px;
+     }
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+   
+</style>

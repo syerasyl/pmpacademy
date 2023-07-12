@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--========== CSS ==========-->
+
+    <!-- ============FONT AWESOME=========== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--    <link rel="stylesheet" href="/public/css/admin-page-style.css">-->
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+
+
+    <title>ADMIN PANEL</title>
+</head>
+<body>
+<%- include('blocks/admin-header') %>
+
+<!--========== CONTENTS ==========-->
+<main>
+    <h2 class="main-heading">User Edit</h2>
+    <section>
+        <section class="main-container-right">
+            <div>
+                <form action="/user-edit/<%= user.id %>" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <label for="title" class="text-white">Username: </label>
+                    <input type="text" class="form-control" placeholder="Nickname" name="nickname"
+                           value="<%= user.username %>" required>
+                    <br><br>
+                    <label for="type" class="text-white">Email: </label>
+                    <input type="text" class="form-control" placeholder="Email" name="email" value="<%= user.email %>"
+                           required>
+                    <br><br>
+                    <label for="type" class="text-white">Roles: </label>
+                    <input type="text" class="form-control" placeholder="Roles" name="roles" value="<%= user.roles %>"
+                           required>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"> Update</button>
+                    </div>
+                </form>
+                <form method="post" action="/user-delete/<%= user.id %>">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"> Delete</button>
+                    </div>
+                </form>
+        </section>
+    </section>
+</main>
+
+<!--========== MAIN JS ==========-->
+<script src="assets/edu.js"></script>
+</body>
+</html>
+
+<style>
+
+</style>

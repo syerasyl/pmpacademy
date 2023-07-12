@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+
+
+    <title>EDU</title>
+</head>
+<body>
+<%- include('blocks/header-main') %>
+
+<!--========== CONTENTS ==========-->
+<main>
+    <h2 class="main-heading">Reviews </h2>
+    <section>
+        <section class="main-container-right">
+            <% reviews.forEach(function(review) { %>
+                <article>
+                    <div class="icon-article">
+                        <img style="padding-top: 20px" src="/public/images/comment.png" alt="">
+                    </div>
+                    <div>
+                        <h2><%= review.title %></h2>
+                        <div><p>by <a href=""><%= review.user.username %></a>, <%= review.dateCreated %></p></div>
+
+                        <p><%= review.text %></p>
+                        <hr>
+                        <% review.comments.forEach(function(comment) { %>
+                            <fieldset>
+                                <p><a><%= comment.user.username %> </a> | <%= comment.date %></p>
+                                <p><%= comment.text %></p>
+                            </fieldset>
+                        <br>
+                        <% }) %>
+                        <form action="/postComment/<%= review._id %>" method="POST">
+                            <label>Your Comment: </label><br>
+                            <textarea id="text" name="text"></textarea>
+                            <br>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Post Comment</button>
+                        </form>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+        <form action="/postReview" method="POST">
+            <label>Write your own review: </label><br>
+            <input type="text" name="title" placeholder="Title"><br>
+            <textarea id="text" name="text"></textarea>
+            <br>
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Post Review</button>
+        </form>
+    </section>
+</main>
+
+<!--========== MAIN JS ==========-->
+<script src="assets/edu.js"></script>
+</body>
+</html>
+
+<style>
+
+</style>

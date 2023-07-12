@@ -1,0 +1,116 @@
+<header class="header">
+    <div class="header__container">
+        <img src="/public/images/perfil.jpg" alt="" class="header__img">
+
+        <a href="#" class="header__logo"><h3>pmp academy</h3></a>
+
+        <div class="header__search">
+            <input type="search" placeholder="Search" class="header__input">
+            <i class='bx bx-search header__icon'></i>
+        </div>
+
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+    </div>
+</header>
+
+<!--========== NAV ==========-->
+<div class="nav" id="navbar">
+    <nav class="nav__container">
+        <div>
+            <a href="/main" class="nav__link nav__logo">
+                <i class='bx bxs-disc nav__icon' ></i>
+                <span class="nav__logo-name">PMP Academy</span>
+            </a>
+
+            <div class="nav__list">
+                <div class="nav__items">
+                    <h3 class="nav__subtitle">Profile</h3>
+
+                    <a href="/main" class="nav__link active">
+                        <i class='bx bx-home nav__icon' ></i>
+                        <span class="nav__name">Home</span>
+                    </a>
+                    
+                    <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='nav__course' ><img src="/public/images/clipboard.png" alt=""></i>
+                            <span class="nav__name">Test</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="/courses" class="nav__dropdown-item">Courses</a>
+                                <a href="#" class="nav__dropdown-item">Progress</a>
+
+                                
+                                <!-- <a href="#" class="nav__dropdown-item">SAT &#10006;</a>
+                                <a href="#" class="nav__dropdown-item">UNT &#10006;</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="nav__dropdown">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name">Profile</span>
+                            <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                        </a>
+
+                        
+                        <div class="nav__dropdown-collapse">
+                            <div class="nav__dropdown-content">
+                                <a href="/user-profile" class="nav__dropdown-item">Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <form action="/logout" method="POST">
+        <div class="nav__link nav__logout">
+            <i class='bx bx-log-out nav__icon' ></i>
+            <button class="nav__name">Log Out</button>
+        </div>
+      </form>
+
+      <!-- <form class="logout-class" action="/logout" method="POST">
+        <button>Logout</button>
+      </form> -->
+      <script>
+        /*==================== SHOW NAVBAR ====================*/
+const showMenu = (headerToggle, navbarId) =>{
+  const toggleBtn = document.getElementById(headerToggle),
+  nav = document.getElementById(navbarId)
+  
+  // Validate that variables exist
+  if(headerToggle && navbarId){
+      toggleBtn.addEventListener('click', ()=>{
+          // We add the show-menu class to the div tag with the nav__menu class
+          nav.classList.toggle('show-menu')
+          // change icon
+          toggleBtn.classList.toggle('bx-x')
+      })
+  }
+}
+showMenu('header-toggle','navbar')
+
+/*==================== LINK ACTIVE ====================*/
+const linkColor = document.querySelectorAll('.nav__link')
+
+function colorLink(){
+  linkColor.forEach(l => l.classList.remove('active'))
+  this.classList.add('active')
+}
+
+linkColor.forEach(l => l.addEventListener('click', colorLink))
+    </script>
+    </nav>
+</div>

@@ -1,0 +1,52 @@
+
+<section id="section-header">
+<nav>
+    <div>
+    <a href="/index" class="logo"><h3>pmp</h3></a>
+    <a href="/index" class="logo"><h3 class="academy1">academy</h3></a>
+</div>
+    
+    <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul  onclick="close_menu()"">
+            <li> </li>
+              
+            <li><a class="menu-items" href="/">Home</a></li>
+            <li><a class="menu-items" href="#info-block">Directions</a></li>
+            <li><a class="menu-items" href="#about-block">About</a></li>
+            <li><a class="menu-items" href="#contact-block">Contact</a></li>
+            <li><a class="menu-items" href="#footer-block">FAQ</a></li>
+            <li><a href="/login"><h4 class="login">LOG IN</h4></a></li>
+    </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+</div>
+</nav>
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+function showMenu() {
+    navLinks.style.right = "0";
+    document.getElementById("navLinks").classList.toggle('active');
+}
+
+function hideMenu() {
+    // if (document.getElementById('hideMenu-id').style.display=='block') {
+    //     ducument.getElementById('hideMenu-id').style.display=='none';
+    // } else {
+    //     ducument.getElementById('hideMenu-id').style.display=='block';
+    // }
+    
+    navLinks.style.right = "-300px";
+}
+function close_menu() {
+    // document.getElementById("ulLinks").ulLinks.remove('active');
+    navLinks.style.right = "-300px";
+
+}
+</script>
+</section>
+
+<style>
+
+</style>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/public/css/edu-style.css">
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+
+    <title>PMP Academy</title>
+
+</head>
+<body>
+<%- include('blocks/header-main') %>
+<!--========== CONTENTS ==========-->
+<main>
+    <section>
+        <h1 class="display-5">Passed Tests:</h1>
+        <hr>
+        <% pass.forEach(function(p) {
+        if (p.user._id.equals(user._id)) {
+            let scores = 0;
+            for (let elem of p.correct) {
+                if (elem === 1) {
+                    scores++;
+                }
+            }
+
+        %>
+            <a href="/review/<%= p._id %>"><%= p.name %> | Scores: <%= scores %> / <%= p.correct.length %> | Date: <%= p.createdAt %> </a>
+            <br>
+        <% } %>
+        <% }); %>
+    </section>
+</main>
+<script src="/assets/edu-scripts/edu.js"></script>
+</body>
+</html>
+
+<style>
+    .available a {
+        color: rgb(130, 130, 8);
+    }
+
+    /* .column {
+    float: left;
+    width: 30%;
+    border: 1px solid #58555E;
+    border-radius: 5px;
+    margin: 20px;
+    background: rgb(243, 243, 243);
+    padding: 10px 15px 10px 15px;
+  }
+
+  .columns:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column:hover{
+      background: rgba(133, 223, 6, 0.225);
+      transition: 0.7s;
+  }
+
+  .ielts-rule {
+      position: relative;
+      margin: 50px 20px 50px 20px;
+      border: 1px solid #58555E;
+      border-radius: 5px;
+      padding: 10px 25px 10px 25px;
+  } */
+</style>
